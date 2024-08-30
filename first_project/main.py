@@ -1,3 +1,5 @@
-#Connor Pavicic, first programming project
+import random
 
-print("This is just a test")
+num = random.randint(0,20)
+
+print("This is just a test", num)
