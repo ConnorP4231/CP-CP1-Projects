@@ -9,15 +9,15 @@ if calculation == "+":
 elif calculation == "-":
     first_sub = int(input("What is the first number you would like to subtract?: "))
     second_sub = int(input("What is the second number you would like to subtract?: "))
-    print(first_sub+second_sub)
+    print(first_sub-second_sub)
 elif calculation == "*":
     first_mult = int(input("What is the first number you would like to multiply?: "))
     second_mult = int(input("What is the second number you would like to multiply?: "))
-    print(first_mult+second_mult)
+    print(first_mult*second_mult)
 elif calculation == "/":
     first_div = int(input("What is the first number you would like to divide?: "))
     second_div = int(input("What is the second number you would like to divide?: "))
-    print(first_div+second_div)
+    print(first_div/second_div)
 elif calculation == "**":
     first_ex = int(input("What do you want your base to be?: "))
     second_ex = int(input("What do you want your exponent to be?: "))
@@ -28,4 +28,5 @@ elif calculation == "%":
     print(first_mod%second_mod)
 elif calculation == "//":
     first_floor = int(input("What is the first number you would like to divide?: "))
-    second_floor
+    second_floor = int(input("What is the second number you would like to divide?: "))
+    print(first_floor//second_floor)
