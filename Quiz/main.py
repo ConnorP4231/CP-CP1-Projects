@@ -20,7 +20,7 @@ if question_3 == 5:
 else:
     score = score-1
 
-if question_4 == 27:
+if question_4 == 8:
     score = score
 else:
     score = score-1
