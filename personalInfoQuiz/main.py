@@ -1,3 +1,5 @@
+# Connor Pavicic, personalInfoQuiz
+
 name = input("What is your name?: ")
 age = input("How old are you?: ")
 height = input("What is your height in meters?: ")
