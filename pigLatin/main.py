@@ -1,6 +1,6 @@
 # Connor Pavicic, pigLatin
 
-def translator(word_slice):    
+def translator():    
     word = input("What do you want to translate?: ")
     vowels = ['a', 'e', 'i', 'o', 'u']
     word = word.split()
@@ -12,11 +12,19 @@ def translator(word_slice):
             word[num] = word[num] + 'yay'
             num = num+1
         else:
-            word_slice = word[num][0]
-            if word_slice in word[num]:
-                word[num] = word_slice
-            word[num] += word_slice
-    translated_sentence = ' '.join(word)
-    return translated_sentence
+            global word_split
+            global first_char
+            first_char = word[num][0]
+            word[num] = str(word[num])
+            word_split = word[num][0].split
+            word_split = str(word_split)
+            word[num] = word[num][0].replace(first_char, '')
+            word[num] = word[num] + word_split + 'ay'
+            word[num] = list(word[num])
+    
+    global translated
+    translated = word
+    return translated
 
-print(translator(word_slice="word_slice"))
+
+print(translator)
