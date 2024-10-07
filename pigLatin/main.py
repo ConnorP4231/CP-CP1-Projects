@@ -1,22 +1,22 @@
 # Connor Pavicic, pigLatin
 
-def translator():    
-    word = input("What do you want to translate?: ")
-    vowels = 'aeiou'
+def translator():
+    word = input("What word would you like to translate?: ")
     num = 0
-    length_word = len(word)-1
-   
-    if vowels in word[0]:
-        word = word + 'ay'
-        print(word)
+    new_word = word
+    vowels = 'aeiou'
+    while word[num] not in vowels:
+        consonant = word[num]
+        new_word = new_word[(num+1):] + consonant
+        num = num+1
+        if word[num] not in vowels:
+            vowel = word[num]
+            new_word = vowel + new_word
     else:
-       while length_word>num:
-            while vowels not in word[num]:
-                word = word[num+1:] + word[num]
-                num = num+1
-            else:
-                word = word + 'ay'
-                print(word)
+        final_word = new_word + 'ay'
+    
+    final_word = new_word + 'ay'
+    return final_word
 
 
-translator()
+print(translator())
