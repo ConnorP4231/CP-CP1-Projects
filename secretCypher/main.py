@@ -2,30 +2,43 @@
 
 def cypher():
     alphabet = 'abcdefghijklmnopqrstuvwxyz'
-    secret_alphabet = 'zyxwvutsrqponmlkjihgedcba'
-    i = 0
+    secret_alphabet = 'zyxwvutsrqponmlkjihgfedcba'
 
-    which_decode = input("Would you like to translate or de-translate?: ")
+    which_decode = input("Would you like to translate or de-translate?: ").lower()
+    
     if which_decode == 'translate':
-        translate = input("What would you like to translate?: ")
-        translate = list(translate)
-        length_translate = len(translate)-1
-        while i < length_translate:
-            translate[i] = secret_alphabet[i]
+        translate = input("What would you like to translate?: ").lower()
+        final_translate = ''
+        i = 0
+        
+        while i < len(translate):
+            char = translate[i]
+            if char in alphabet:
+                index = alphabet.index(char)
+                final_translate += secret_alphabet[index]
+            else:
+                final_translate += char
             i += 1
-            final_translate = str(translate)
         
         return final_translate
-    elif which_decode == 'de-translate' or 'detranslate':
-        detranslate = input("What would you like to detranslate?:")
-        detranslate = str(detranslate)
-        length_de = len(detranslate)-1
-        while i < length_de:
-            detranslate[i] = alphabet[i]
+    
+    elif which_decode == 'de-translate' or which_decode == 'detranslate':
+        detranslate = input("What would you like to detranslate?: ").lower()
+        final_detranslate = ''
+        i = 0
+        
+        while i < len(detranslate):
+            char = detranslate[i]
+            if char in secret_alphabet:
+                index = secret_alphabet.index(char)
+                final_detranslate += alphabet[index]
+            else:
+                final_detranslate += char
             i += 1
-            final_detranslate = str(detranslate)
         
         return final_detranslate
-    
+    else:
+        return "That's not an option"
 
 print(cypher())
+
