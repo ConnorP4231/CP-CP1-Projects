@@ -1,21 +1,24 @@
 # Connor Pavicic, passwordChecker
 
-num = 0
 special_characters = ['!', '@', '#', '$', '%', '^', '&', '*']
 numbers = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0']
 
-while num < 3:
-    password = list(input("Enter a password with atleast 8 characters, atleast 1 special character, and atleast 1 number: "))
-    num = 0
-    length = len(password)
+while True:
+    password = input("Enter a password with at least 8 characters, at least 1 special character, and at least 1 number: ")
+    if len(password) < 8:
+        print("Password invalid: must be at least 8 characters.")
+        continue
 
-    if special_characters in password:
-        num += 1
-    if numbers in password:
-        num+=1
-    if length <= 8:
-        num += 1
-    if num < 3:
-        print("Password invalid, try again.")
-else:
+    has_special = any(char in special_characters for char in password)
+    has_number = any(char in numbers for char in password)
+
+    if not has_special:
+        print("Password invalid: must contain at least one special character.")
+        continue
+
+    if not has_number:
+        print("Password invalid: must contain at least one number.")
+        continue
+
     print("Password is valid.")
+    break
