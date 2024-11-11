@@ -2,39 +2,48 @@
 
 import random
 rps_list = ['rock', 'paper', 'scissors']
+human_score = 0
+robot_score = 0
 
 while True:
     rps = input("Rock, paper, or scissors?: ").lower()
     computer_rps = random.choice(rps_list)
-    if rps != 'rock' and rps != 'paper' and rps != 'scissors':
-        print("Invalid option, ")
-        play_again = input("Do you want to play again?: ").lower()
-        if play_again == 'yes':
-            continue
-        elif play_again == 'no':
-            break
-        else:
-            play_again = input("Do you want to play again?: ").lower()
-    else:
-        if rps == computer_rps:
+
+    if rps == computer_rps:
             print('Computer chose', computer_rps, 'and you chose', rps, 'so it is a tie.')
-        elif rps == 'rock' and computer_rps == 'paper':
+    elif rps == 'rock' and computer_rps == 'paper':
             print('Computer chose', computer_rps, 'and you chose', rps, 'so the computer won.')
-        elif rps == 'scissors' and computer_rps == 'paper':
+            robot_score += 1
+            print('Your score is', human_score, 'and the robots score is', robot_score)
+    elif rps == 'scissors' and computer_rps == 'paper':
             print('Computer chose', computer_rps, 'and you chose', rps, 'so you won.')
-        elif rps == 'scissors' and computer_rps == 'rock':
+            human_score += 1
+            print('Your score is', human_score, 'and the robots score is', robot_score)
+    elif rps == 'scissors' and computer_rps == 'rock':
             print('Computer chose', computer_rps, 'and you chose', rps, 'so the computer won.')
-        elif rps == 'paper' and computer_rps == 'rock':
+            robot_score += 1
+            print('Your score is', human_score, 'and the robots score is', robot_score)
+    elif rps == 'paper' and computer_rps == 'rock':
             print('Computer chose', computer_rps, 'and you chose', rps, 'so you won.')
-        elif rps == 'paper' and computer_rps == 'scissors':
+            human_score += 1
+            print('Your score is', human_score, 'and the robots score is', robot_score)
+    elif rps == 'paper' and computer_rps == 'scissors':
             print('Computer chose', computer_rps, 'and you chose', rps, 'so the computer won.')
-        elif rps == 'rock' and computer_rps == 'scissors':
+            robot_score += 1
+            print('Your score is', human_score, 'and the robots score is', robot_score)
+    elif rps == 'rock' and computer_rps == 'scissors':
             print('Computer chose', computer_rps, 'and you chose', rps, 'so you won.')
-        
-        play_again = input("Do you want to play again?: ").lower()
-        
-        while play_again != 'yes' or play_again != 'no':
-            if play_again == 'yes':
-                continue
-            elif play_again == 'no':
-                break
+            robot_score += 1
+            print('Your score is', human_score, 'and the robots score is', robot_score)
+    else:
+        print("Invalid option.")
+
+    play_again = input("Do you want to play again?: ")
+    
+    if play_again == 'yes':
+        continue
+    if play_again == 'no':
+        print("The final score for you is", human_score, "and the robot ended with a score of", robot_score)
+        break
+    else:
+        print("Invalid option, play again.")
