@@ -17,13 +17,13 @@ if question_1 == '0.3' or question_1 == 'A':
 else:
     print('Incorrect!')
     question_count += 1
-    easy_question1 = int(input("""What is 2+2?
+    easy_question1 = input("""What is 2+2?
 A. 2
 B. 3
 C. 4
 D. 5
                                
- Answer: """))
+ Answer: """)
     if easy_question1 == '4' or easy_question1 == 'C':
         print('Correct!')
         score += 1
@@ -148,7 +148,10 @@ question_5 = input("""When is Christmas?
 A. December 25
 B. February 31
 C. December 32
-D. Yes""")
+D. Yes
+                   
+Answer: """)
+question_count += 1
 
 if question_5 == 'A' or question_5 == 'December 25':
     print('Correct!')
