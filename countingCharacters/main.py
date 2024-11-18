@@ -34,7 +34,6 @@ W_count = 0
 X_count = 0
 Y_count = 0
 Z_count = 0
-Unknown_count = 0
 
 for A in grid:
     for a in A:
@@ -166,9 +165,4 @@ for Z in grid:
         if z == 'z':
             Z_count += 1
 
-for UNKNOWN in grid:
-    for unknown in UNKNOWN:
-        if unknown != 'a' or unknown != 'b' or unknown != 'c' or unknown != 'd' or unknown != 'e' or unknown != 'f' or unknown != 'g' or unknown != 'h' or unknown != 'i' or unknown != 'j' or unknown != 'k' or unknown != 'l' or unknown != 'm' or unknown != 'n' or unknown != 'o' or unknown != 'p' or unknown != 'q' or unknown != 'r' or unknown != 's' or unknown != 't' or unknown != 'u' or unknown != 'v' or unknown != 'w' or unknown != 'x' or unknown != 'y' or unknown != 'z':
-            Unknown_count += 1
-
-print(f'A: {A_count} B: {B_count} C: {C_count} D: {D_count} E: {E_count} F: {F_count} G: {G_count} H: {H_count} I: {I_count} J: {J_count} K: {K_count} L: {L_count} M: {M_count} N: {N_count} O: {O_count} P: {P_count} Q: {Q_count} R: {R_count} S: {S_count} T: {T_count} U: {U_count} V: {V_count} W: {W_count} X: {X_count}')
+print(f'A: {A_count} B: {B_count} C: {C_count} D: {D_count} E: {E_count} F: {F_count} G: {G_count} H: {H_count} I: {I_count} J: {J_count} K: {K_count} L: {L_count} M: {M_count} N: {N_count} O: {O_count} P: {P_count} Q: {Q_count} R: {R_count} S: {S_count} T: {T_count} U: {U_count} V: {V_count} W: {W_count} X: {X_count} Y: {Y_count} Z: {Z_count}')
