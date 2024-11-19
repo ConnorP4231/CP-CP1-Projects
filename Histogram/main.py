@@ -8,5 +8,5 @@ while count<amount:
     output = ''
     for x in range(num):
         output += '*'
-    print(output)
+    print(num, ':', output)
     count += 1
