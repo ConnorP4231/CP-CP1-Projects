@@ -5,6 +5,58 @@ import random
 rows = ['1', '2', '3', '4', '5', '6', '7', '8', '9']
 choice = ['1', '2', '3', '4', '5', '6', '7', '8', '9']
 
+human_wins = ''
+computer_wins = ''
+
+def human_win_checker(human_wins = human_wins):
+    if rows[0] == rows[1] and rows[1] == rows[2] and rows[0] == 'X':
+        human_wins += 'You won!'
+    elif rows[3] == rows[4] and rows[4] == rows[5] and rows[3] == 'X':
+        human_wins += 'You won!'
+    elif rows[6] == rows[7] and rows[7] == rows[8] and rows[6] == 'X':
+        human_wins += 'You won!'
+    elif rows[0] == rows[3] and rows[3] == rows[6] and rows[0] == 'X':
+        human_wins += 'You won!'
+    elif rows[1] == rows[4] and rows[4] == rows[7] and rows[1] == 'X':
+        human_wins += 'You won!'
+    elif rows[2] == rows[5] and rows[5] == rows[8] and rows[2] == 'X':
+        human_wins += 'You won!'
+    elif rows[0] == rows[4] and rows[4] == rows[8] and rows[0] == 'X':
+        human_wins += 'You won!'
+    elif rows[2] == rows[4] and rows[4] == rows[6] and rows[2] == 'X':
+        human_wins += 'You won!'
+    else:
+        return ''
+    
+
+def computer_win_checker(computer_wins = computer_wins):
+    if rows[0] == rows[1] and rows[1] == rows[2] and rows[0] == 'O':
+        computer_wins += 'The computer won!'
+    elif rows[3] == rows[4] and rows[4] == rows[5] and rows[3] == 'O':
+        computer_wins += 'The computer won!'
+    elif rows[6] == rows[7] and rows[7] == rows[8] and rows[6] == 'O':
+        computer_wins += 'The computer won!'
+    elif rows[0] == rows[3] and rows[3] == rows[6] and rows[0] == 'O':
+        computer_wins += 'The computer won!'
+    elif rows[1] == rows[4] and rows[4] == rows[7] and rows[1] == 'O':
+        computer_wins += 'The computer won!'
+    elif rows[2] == rows[5] and rows[5] == rows[8] and rows[2] == 'O':
+        computer_wins += 'The computer won!'
+    elif rows[0] == rows[4] and rows[4] == rows[8] and rows[0] == 'O':
+        computer_wins += 'The computer won!'
+    elif rows[2] == rows[4] and rows[4] == rows[6] and rows[2] == 'O':
+        computer_wins += 'The computer won!'
+    else:
+        return ''
+
+display_count = 1
+
+for row in range(3):
+    for col in range(3):
+        print(display_count, end=' ')
+        display_count += 1
+    print()
+
 while True:
     count = 0
     #1 = 0 0
@@ -17,7 +69,7 @@ while True:
     #8 = 2 1
     #9 = 2 2
 
-    num = input('Enter a number: ')
+    num = input('Enter a number on the board: ')
 
     if num == '1':
         for row in range(3):
@@ -146,21 +198,28 @@ while True:
             print()
     print()
 
+    
+    human_win_checker()
+    if human_wins == 'You won!':
+        print('You won!')
+        break
+    
     computer_choice = random.choice(choice)
-    print(computer_choice)
+    print('Computer chose:', computer_choice)
+    computer_count = 0
 
     if computer_choice == '1':
         for row in range(3):
             for column in range(3):
                 if computer_choice == '1':
                     if row == 0 and column == 0:
-                        print('X', end=' ')
-                        rows[count] = 'X'
+                        print('O', end=' ')
+                        rows[computer_count] = 'O'
                         choice.remove('1')
-                        count += 1
+                        computer_count += 1
                     else:
-                        print(rows[count], end=' ')
-                        count += 1
+                        print(rows[computer_count], end=' ')
+                        computer_count += 1
             print()
 
     if computer_choice == '2':
@@ -168,13 +227,13 @@ while True:
             for column in range(3):
                 if computer_choice == '2':
                     if row == 0 and column == 1:
-                        print('X', end=' ')
-                        rows[count] = 'X'
+                        print('O', end=' ')
+                        rows[computer_count] = 'O'
                         choice.remove('2')
-                        count += 1
+                        computer_count += 1
                     else:
-                        print(rows[count], end=' ')
-                        count += 1
+                        print(rows[computer_count], end=' ')
+                        computer_count += 1
             print()
 
     if computer_choice == '3':
@@ -182,13 +241,13 @@ while True:
             for column in range(3):
                 if computer_choice == '3':
                     if row == 0 and column == 2:
-                        print('X', end=' ')
-                        rows[count] = 'X'
+                        print('O', end=' ')
+                        rows[computer_count] = 'O'
                         choice.remove('3')
-                        count += 1
+                        computer_count += 1
                     else:
-                        print(rows[count], end=' ')
-                        count += 1
+                        print(rows[computer_count], end=' ')
+                        computer_count += 1
             print()
 
     if computer_choice == '4':
@@ -196,13 +255,13 @@ while True:
             for column in range(3):
                 if computer_choice == '4':
                     if row == 1 and column == 0:
-                        print('X', end=' ')
-                        rows[count] = 'X'
+                        print('O', end=' ')
+                        rows[computer_count] = 'O'
                         choice.remove('4')
-                        count += 1
+                        computer_count += 1
                     else:
-                        print(rows[count], end=' ')
-                        count += 1
+                        print(rows[computer_count], end=' ')
+                        computer_count += 1
             print()
 
     if computer_choice == '5':
@@ -210,13 +269,13 @@ while True:
             for column in range(3):
                 if computer_choice == '5':
                     if row == 1 and column == 1:
-                        print('X', end=' ')
-                        rows[count] = 'X'
+                        print('O', end=' ')
+                        rows[computer_count] = 'O'
                         choice.remove('5')
-                        count += 1
+                        computer_count += 1
                     else:
-                        print(rows[count], end=' ')
-                        count += 1
+                        print(rows[computer_count], end=' ')
+                        computer_count += 1
             print()
 
     if computer_choice == '6':
@@ -224,13 +283,13 @@ while True:
             for column in range(3):
                 if computer_choice == '6':
                     if row == 1 and column == 2:
-                        print('X', end=' ')
-                        rows[count] = 'X'
+                        print('O', end=' ')
+                        rows[computer_count] = 'O'
                         choice.remove('6')
-                        count += 1
+                        computer_count += 1
                     else:
-                        print(rows[count], end=' ')
-                        count += 1
+                        print(rows[computer_count], end=' ')
+                        computer_count += 1
             print()
 
     if computer_choice == '7':
@@ -238,13 +297,13 @@ while True:
             for column in range(3):
                 if computer_choice == '7':
                     if row == 2 and column == 0:
-                        print('X', end=' ')
-                        rows[count] = 'X'
+                        print('O', end=' ')
+                        rows[computer_count] = 'O'
                         choice.remove('7')
-                        count += 1
+                        computer_count += 1
                     else:
-                        print(rows[count], end=' ')
-                        count += 1
+                        print(rows[computer_count], end=' ')
+                        computer_count += 1
             print()
 
     if computer_choice == '8':
@@ -252,13 +311,13 @@ while True:
             for column in range(3):
                 if computer_choice == '8':
                     if row == 2 and column == 1:
-                        print('X', end=' ')
-                        rows[count] = 'X'
+                        print('O', end=' ')
+                        rows[computer_count] = 'O'
                         choice.remove('8')
-                        count += 1
+                        computer_count += 1
                     else:
-                        print(rows[count], end=' ')
-                        count += 1
+                        print(rows[computer_count], end=' ')
+                        computer_count += 1
             print()
 
     if computer_choice == '9':
@@ -266,12 +325,22 @@ while True:
             for column in range(3):
                 if computer_choice == '9':
                     if row == 2 and column == 2:
-                        print('X', end=' ')
-                        rows[count] = 'X'
+                        print('O', end=' ')
+                        rows[computer_count] = 'O'
                         choice.remove('9')
-                        count += 1
+                        computer_count += 1
                     else:
-                        print(rows[count], end=' ')
-                        count += 1
+                        print(rows[computer_count], end=' ')
+                        computer_count += 1
             print()
     print()
+
+
+    computer_win_checker()
+    if computer_wins == 'The computer won!':
+        print('The computer won!')
+        break
+
+    if count == 8 and computer_count == 8:
+        print('The game was a draw!')
+        break
