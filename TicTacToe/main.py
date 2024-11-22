@@ -8,47 +8,6 @@ choice = ['1', '2', '3', '4', '5', '6', '7', '8', '9']
 human_wins = ''
 computer_wins = ''
 
-def human_win_checker(human_wins = human_wins):
-    if rows[0] == rows[1] and rows[1] == rows[2] and rows[0] == 'X':
-        human_wins += 'You won!'
-    elif rows[3] == rows[4] and rows[4] == rows[5] and rows[3] == 'X':
-        human_wins += 'You won!'
-    elif rows[6] == rows[7] and rows[7] == rows[8] and rows[6] == 'X':
-        human_wins += 'You won!'
-    elif rows[0] == rows[3] and rows[3] == rows[6] and rows[0] == 'X':
-        human_wins += 'You won!'
-    elif rows[1] == rows[4] and rows[4] == rows[7] and rows[1] == 'X':
-        human_wins += 'You won!'
-    elif rows[2] == rows[5] and rows[5] == rows[8] and rows[2] == 'X':
-        human_wins += 'You won!'
-    elif rows[0] == rows[4] and rows[4] == rows[8] and rows[0] == 'X':
-        human_wins += 'You won!'
-    elif rows[2] == rows[4] and rows[4] == rows[6] and rows[2] == 'X':
-        human_wins += 'You won!'
-    else:
-        return ''
-    
-
-def computer_win_checker(computer_wins = computer_wins):
-    if rows[0] == rows[1] and rows[1] == rows[2] and rows[0] == 'O':
-        computer_wins += 'The computer won!'
-    elif rows[3] == rows[4] and rows[4] == rows[5] and rows[3] == 'O':
-        computer_wins += 'The computer won!'
-    elif rows[6] == rows[7] and rows[7] == rows[8] and rows[6] == 'O':
-        computer_wins += 'The computer won!'
-    elif rows[0] == rows[3] and rows[3] == rows[6] and rows[0] == 'O':
-        computer_wins += 'The computer won!'
-    elif rows[1] == rows[4] and rows[4] == rows[7] and rows[1] == 'O':
-        computer_wins += 'The computer won!'
-    elif rows[2] == rows[5] and rows[5] == rows[8] and rows[2] == 'O':
-        computer_wins += 'The computer won!'
-    elif rows[0] == rows[4] and rows[4] == rows[8] and rows[0] == 'O':
-        computer_wins += 'The computer won!'
-    elif rows[2] == rows[4] and rows[4] == rows[6] and rows[2] == 'O':
-        computer_wins += 'The computer won!'
-    else:
-        return ''
-
 display_count = 1
 
 for row in range(3):
@@ -199,8 +158,28 @@ while True:
     print()
 
     
-    human_win_checker()
-    if human_wins == 'You won!':
+    if rows[0] == rows[1] and rows[1] == rows[2] and rows[0] == 'X':
+        print('You won!')
+        break
+    elif rows[3] == rows[4] and rows[4] == rows[5] and rows[3] == 'X':
+        print('You won!')
+        break
+    elif rows[6] == rows[7] and rows[7] == rows[8] and rows[6] == 'X':
+        print('You won!')
+        break
+    elif rows[0] == rows[3] and rows[3] == rows[6] and rows[0] == 'X':
+        print('You won!')
+        break
+    elif rows[1] == rows[4] and rows[4] == rows[7] and rows[1] == 'X':
+        print('You won!')
+        break
+    elif rows[2] == rows[5] and rows[5] == rows[8] and rows[2] == 'X':
+        print('You won!')
+        break
+    elif rows[0] == rows[4] and rows[4] == rows[8] and rows[0] == 'X':
+        print('You won!')
+        break
+    elif rows[2] == rows[4] and rows[4] == rows[6] and rows[2] == 'X':
         print('You won!')
         break
     
@@ -336,11 +315,31 @@ while True:
     print()
 
 
-    computer_win_checker()
-    if computer_wins == 'The computer won!':
+    if rows[0] == rows[1] and rows[1] == rows[2] and rows[0] == 'O':
+        print('The computer won!')
+        break
+    elif rows[3] == rows[4] and rows[4] == rows[5] and rows[3] == 'O':
+        print('The computer won!')
+        break
+    elif rows[6] == rows[7] and rows[7] == rows[8] and rows[6] == 'O':
+        print('The computer won!')
+        break
+    elif rows[0] == rows[3] and rows[3] == rows[6] and rows[0] == 'O':
+        print('The computer won!')
+        break
+    elif rows[1] == rows[4] and rows[4] == rows[7] and rows[1] == 'O':
+        print('The computer won!')
+        break
+    elif rows[2] == rows[5] and rows[5] == rows[8] and rows[2] == 'O':
+        print('The computer won!')
+        break
+    elif rows[0] == rows[4] and rows[4] == rows[8] and rows[0] == 'O':
+        print('The computer won!')
+        break
+    elif rows[2] == rows[4] and rows[4] == rows[6] and rows[2] == 'O':
         print('The computer won!')
         break
 
-    if count == 8 and computer_count == 8:
+    if len(choice) == 0:
         print('The game was a draw!')
         break
