@@ -340,6 +340,6 @@ while True:
         print('The computer won!')
         break
 
-    if len(choice) == 0:
+    if str(len(choice)) == 0:
         print('The game was a draw!')
         break
