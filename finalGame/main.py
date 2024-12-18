@@ -15,6 +15,9 @@ thirst = 100
 hunger = 100
 play_again = ''
 
+print("""Hello user, you have awoken in a random house that has creatures lurking around in it. 
+      Your task is to escape this house by reading notes to unlock doors and all that. Good luck!""")
+
 while True:
     if play_again == 'yes':
         pass
@@ -174,6 +177,7 @@ while True:
     elif which_room == 6:
         if hallway_door == True:
             print("You found a key! But wait... This is the creature hideout! Defend yourself!")
+            first_key = True
         elif hallway_door == False:
             print('This is the create hideout! Defend yourself!')
         
