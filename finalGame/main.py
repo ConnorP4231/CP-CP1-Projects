@@ -162,7 +162,7 @@ def final_room():
 # Main game loop
 while True:
     check_game_over()
-    which_room = int(input('Which room would you like to go to?: '))
+    which_room = int(input('Which room would you like to go to? (1-9): '))
 
     if which_room == 1:
         print(room_one())
